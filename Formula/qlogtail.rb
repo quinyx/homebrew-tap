@@ -5,20 +5,20 @@
 class Qlogtail < Formula
   desc "View Quinyx logs like a boss"
   homepage "https://quinyx.com/"
-  version "53680.20210217"
+  version "53684.20210217.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v53680.20210217/qlogtail_53680.20210217_Darwin_x86_64.tar.gz", :using => CurlDownloadStrategy.
-    sha256 "6a696d3c3aa61b3931847205b24ee8dd01f64fcc9f418613c426bcb750084905"
+    url "https://github.com/quinyx/homebrew-tap/releases/download/v53684.20210217.0/qlogtail_53684.20210217.0_Darwin_x86_64.tar.gz"
+    sha256 "f49188eb574fca05f95e37fca7030d617aa5c629fccea97a855e1c405d0308aa"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v53680.20210217/qlogtail_53680.20210217_Linux_x86_64.tar.gz", :using => CurlDownloadStrategy.
-    sha256 "5523abe71c93aff8407449fbf2b8b621109aba4d584128d687e6945bf1dfd04d"
+    url "https://github.com/quinyx/homebrew-tap/releases/download/v53684.20210217.0/qlogtail_53684.20210217.0_Linux_x86_64.tar.gz"
+    sha256 "82ac0e5f324b9ede53c5d5ad5d4ced471c5982b0b7e0e71ac1d5a5294f9fabd0"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v53680.20210217/qlogtail_53680.20210217_Linux_arm64.tar.gz", :using => CurlDownloadStrategy.
-    sha256 "dc32f7aefbe678417e79d8e92083703eed5e7a33ff0efab8bda6e732ad0307d2"
+    url "https://github.com/quinyx/homebrew-tap/releases/download/v53684.20210217.0/qlogtail_53684.20210217.0_Linux_arm64.tar.gz"
+    sha256 "df0ac89d09370048c09ae13508183c33f3a9cfcb6cc1642a4663ca0506505f9d"
   end
 
   def install
