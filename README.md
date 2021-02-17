@@ -1,1 +1,1 @@
-# qlogtail
+# Quinyx Homebrew Tap
