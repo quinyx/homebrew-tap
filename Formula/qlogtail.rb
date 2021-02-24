@@ -5,20 +5,20 @@
 class Qlogtail < Formula
   desc "View Quinyx logs like a boss"
   homepage "https://quinyx.com/"
-  version "50.0.0"
+  version "50.1.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.0.0/qlogtail_50.0.0_Darwin_x86_64.tar.gz"
-    sha256 "71cd37ab58452440cc12a311955c091e584c088f94c16c54408aac46f17087be"
+    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.1.0/qlogtail_50.1.0_Darwin_x86_64.tar.gz"
+    sha256 "5083be04df778f78ba65d984d9b058896bde162da1a24b8323e0ccf9b21d86f6"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.0.0/qlogtail_50.0.0_Linux_x86_64.tar.gz"
-    sha256 "ea5509e574b67564ed50fcdb0a5c9929886aec410d06f76421ce79c2d3614afa"
+    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.1.0/qlogtail_50.1.0_Linux_x86_64.tar.gz"
+    sha256 "c5cb4ed1015ca418a4a160d6f314973189d5403592b9fd87ba3b303c551fa445"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.0.0/qlogtail_50.0.0_Linux_arm64.tar.gz"
-    sha256 "52df47f3d136cdfd1927097d85c4a647b22889ecbeccff9341850ba6a612aec3"
+    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.1.0/qlogtail_50.1.0_Linux_arm64.tar.gz"
+    sha256 "94edb8c97802ccfcdd0f0a4b7ae6ecc2ed462c8f2bb273feb1ae854ed064768f"
   end
 
   def install
