@@ -5,24 +5,24 @@
 class Qlogtail < Formula
   desc "View Quinyx logs like a boss"
   homepage "https://quinyx.com/"
-  version "50.6.0"
+  version "50.8.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.6.0/qlogtail_50.6.0_darwin_amd64.tar.gz"
-    sha256 "f754557ff86bbe80220051321c86cc8f82e2549d3948317b2b99fa8e7a9755b2"
+    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.8.0/qlogtail_50.8.0_darwin_amd64.tar.gz"
+    sha256 "9dd442d2106a27634744ac25d06b34dcc7c72d1085713259f444d6891afc4d28"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.6.0/qlogtail_50.6.0_darwin_arm64.tar.gz"
-    sha256 "37feb67302572274c439b7050efc8310437ae32637a25e96a4ddd6c5489b8e00"
+    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.8.0/qlogtail_50.8.0_darwin_arm64.tar.gz"
+    sha256 "1f01624eeed227ff7aaee76ca0cd24f04c90e2208ce8e6dbc78535f7b8be6695"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.6.0/qlogtail_50.6.0_linux_amd64.tar.gz"
-    sha256 "5cb7ff2cf367e00777cc78bfb5843303ce3562fbbc2143d7eeadc5160ffbd9bd"
+    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.8.0/qlogtail_50.8.0_linux_amd64.tar.gz"
+    sha256 "0cf96147356e0d3ffe155df36402aba4681bcf81a5aa59fbc5c222e62b38e198"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.6.0/qlogtail_50.6.0_linux_arm64.tar.gz"
-    sha256 "35b97c1b01fcb2fb84a93464d7647f7cbf8d179310e905627a3ecc66ef9b124e"
+    url "https://github.com/quinyx/homebrew-tap/releases/download/v50.8.0/qlogtail_50.8.0_linux_arm64.tar.gz"
+    sha256 "75e942ecfdbf91a8103c8df8b3db017a55db69c3401f80aee74f4c0a2cb86e52"
   end
 
   def install
