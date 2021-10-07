@@ -5,28 +5,28 @@
 class FrontendDevRelay < Formula
   desc "Powerup Frontend workflow, no more waiting for Backend to deliver"
   homepage "https://quinyx.com/"
-  version "2.57.5"
+  version "2.57.6"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.5/frontend-dev-relay_2.57.5_darwin_amd64.tar.gz"
-      sha256 "15e15ab762651195735c4c1c41dc905bbbdf15258efdc1de1202f4d0047ec42a"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.5/frontend-dev-relay_2.57.5_darwin_arm64.tar.gz"
-      sha256 "9d0e6eda57cf69c3742135b39894902a3faecba9d1e4f0a8519c0b3cd40b1b10"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.6/frontend-dev-relay_2.57.6_darwin_arm64.tar.gz"
+      sha256 "768ffd819b70909fe67e7a4b6f0bdd9d5aaa3bc8c0392cad1b1645b4c8e4f09b"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.6/frontend-dev-relay_2.57.6_darwin_amd64.tar.gz"
+      sha256 "e8f01065aee44c920735fed757b4162aa8e99aeb8b3d9bafa3c4c389c1bbb4a3"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.5/frontend-dev-relay_2.57.5_linux_arm64.tar.gz"
-      sha256 "3d1aef13530c082569301be2561a0bacf7649bac55835b97407710a87d40b6ee"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.6/frontend-dev-relay_2.57.6_linux_arm64.tar.gz"
+      sha256 "3da0ecf72610baa57af6715a3a063b4ffe98041f3c2b5312f8a6bc8f8353128b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.5/frontend-dev-relay_2.57.5_linux_amd64.tar.gz"
-      sha256 "7ca12081bc356d72d8c241b4b20d6c90d16b352048153168fac98bb2642dfd8c"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.6/frontend-dev-relay_2.57.6_linux_amd64.tar.gz"
+      sha256 "7dcfc877491f8b12401c69c5b6d1709455a4a0f8e1f9264cae5d190902c67b60"
     end
   end
 
