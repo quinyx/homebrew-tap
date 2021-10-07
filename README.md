@@ -12,3 +12,9 @@ Tail Quinyx service logs like a boss with qlogtail
 ```
 brew install quinyx/tap/qlogtail
 ```
+
+## frontend-dev-relay
+Powerup Frontend workflow, no more waiting for Backend to deliver
+```
+brew install quinyx/tap/frontend-dev-relay
+```
