@@ -5,28 +5,28 @@
 class FrontendDevRelay < Formula
   desc "Powerup Frontend workflow, no more waiting for Backend to deliver"
   homepage "https://quinyx.com/"
-  version "2.57.6"
+  version "2.57.10"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.6/frontend-dev-relay_2.57.6_darwin_arm64.tar.gz"
-      sha256 "768ffd819b70909fe67e7a4b6f0bdd9d5aaa3bc8c0392cad1b1645b4c8e4f09b"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.6/frontend-dev-relay_2.57.6_darwin_amd64.tar.gz"
-      sha256 "e8f01065aee44c920735fed757b4162aa8e99aeb8b3d9bafa3c4c389c1bbb4a3"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.10/frontend-dev-relay_2.57.10_darwin_amd64.tar.gz"
+      sha256 "fd646a7a081a249a43308fcf22a3832bad8c31c69e816a690ba28f73172098b7"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.10/frontend-dev-relay_2.57.10_darwin_arm64.tar.gz"
+      sha256 "31f4126ab9fa57b30bb5c79ddaf6f3c9035f5d7c1c3af047c1119a6e4159025d"
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.6/frontend-dev-relay_2.57.6_linux_arm64.tar.gz"
-      sha256 "3da0ecf72610baa57af6715a3a063b4ffe98041f3c2b5312f8a6bc8f8353128b"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.6/frontend-dev-relay_2.57.6_linux_amd64.tar.gz"
-      sha256 "7dcfc877491f8b12401c69c5b6d1709455a4a0f8e1f9264cae5d190902c67b60"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.10/frontend-dev-relay_2.57.10_linux_amd64.tar.gz"
+      sha256 "b5e5eb96e3b3c2ccdf1e4329fc6139425a00734b60aacb8bfa3c29b7f6459daa"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.10/frontend-dev-relay_2.57.10_linux_arm64.tar.gz"
+      sha256 "be832db8b0a26539e2fc6446b25570f3f117c9a5e3bcae4f21a57c20a2c86c97"
     end
   end
 
