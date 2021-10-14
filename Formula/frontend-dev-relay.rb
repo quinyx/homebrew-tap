@@ -5,28 +5,28 @@
 class FrontendDevRelay < Formula
   desc "Powerup Frontend workflow, no more waiting for Backend to deliver"
   homepage "https://quinyx.com/"
-  version "2.57.13"
+  version "2.57.18"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.13/frontend-dev-relay_2.57.13_darwin_arm64.tar.gz"
-      sha256 "befa00d58cf2f1e725ad3158d4f301428f0d0f9b9bbde51d0dd179e684a5cc57"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.13/frontend-dev-relay_2.57.13_darwin_amd64.tar.gz"
-      sha256 "a72553ca594120b66208c6d92888519e74bb23a61c4c96a9c5b465924f9a94cb"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.18/frontend-dev-relay_2.57.18_darwin_amd64.tar.gz"
+      sha256 "aa88d4d9d3b5a6841e655acf7be3b8b0f07fb400d4f4e467d3776bb0c34c2055"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.18/frontend-dev-relay_2.57.18_darwin_arm64.tar.gz"
+      sha256 "481c1c4c6b29b7db356e08473bd3162d3223c013d15ac1e76ef559b04956b8b8"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.13/frontend-dev-relay_2.57.13_linux_arm64.tar.gz"
-      sha256 "a3ad09e155874938e8ea93a9948122a6b777c79ca9e8d6ffe9a6e8355a762b1f"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.18/frontend-dev-relay_2.57.18_linux_arm64.tar.gz"
+      sha256 "d943cf86926326180ad5f6d47f553339e652e026942645a43cba89c0bc2ecb41"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.13/frontend-dev-relay_2.57.13_linux_amd64.tar.gz"
-      sha256 "5fbbc9572ec0ee0e45bac3a91813a391a6b996ac51ab315130ba25ceaa3cf5bd"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.57.18/frontend-dev-relay_2.57.18_linux_amd64.tar.gz"
+      sha256 "3f48009aced6351b396898028a92cba5f73ded6a6800653c16f14cc8ad53026a"
     end
   end
 
