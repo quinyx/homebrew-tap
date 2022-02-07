@@ -5,28 +5,28 @@
 class FrontendDevRelay < Formula
   desc "Powerup Frontend workflow, no more waiting for Backend to deliver"
   homepage "https://quinyx.com/"
-  version "2.58.0"
+  version "2.59.2"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.58.0/frontend-dev-relay_2.58.0_darwin_amd64.tar.gz"
-      sha256 "0d4a7b8cacb00e9b69c3f5dbf8455ca21ca2a91354d358f28f5a32e07ba50ce8"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.58.0/frontend-dev-relay_2.58.0_darwin_arm64.tar.gz"
-      sha256 "30aab98b293ea3c8764537941824bef3fb5017e389b524588a571d89a6b0fff3"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.59.2/frontend-dev-relay_2.59.2_darwin_arm64.tar.gz"
+      sha256 "a7873f3150b9cc13b9d70214d213400d45f8ac758e7974603a415e9272de7d15"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.59.2/frontend-dev-relay_2.59.2_darwin_amd64.tar.gz"
+      sha256 "22a074ace253d045a0940cd36ef56c9a6053dc31ef488260957e6dbf9c0826e9"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.58.0/frontend-dev-relay_2.58.0_linux_amd64.tar.gz"
-      sha256 "c151dc8f11b9ea0c724774cb7e2f4c4f5507962c0080699ffeea920e18a99f6d"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.58.0/frontend-dev-relay_2.58.0_linux_arm64.tar.gz"
-      sha256 "6aa3553ab0d41d57478a2ba869aefbaf2ee6307c625ed5eda2888f70c5c5a5a1"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.59.2/frontend-dev-relay_2.59.2_linux_arm64.tar.gz"
+      sha256 "cddfa400217d798b6415173f3e2613ebefd8e2315c8d9fe069831eec3e46a11d"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.59.2/frontend-dev-relay_2.59.2_linux_amd64.tar.gz"
+      sha256 "a2ca33b7b92f50910d3e0aeb371f6edd732fed4691a425cd353d6752739fb0bd"
     end
   end
 
