@@ -5,24 +5,29 @@
 class Qlogtail < Formula
   desc "View Quinyx logs like a boss"
   homepage "https://quinyx.com/"
-  version "59.0.0"
+  version "60.21.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v59.0.0/qlogtail_59.0.0_darwin_amd64.tar.gz"
-    sha256 "947ac48b17ec5673ecc072edf40e608ef974775bf52436cde945f646faaf2bdf"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v60.21.0/qlogtail_60.21.0_darwin_arm64.tar.gz"
+      sha256 "b2a0febfadc3d5520dde9745c8d34f282dd29036271aae729b285fb1ead2628d"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v60.21.0/qlogtail_60.21.0_darwin_amd64.tar.gz"
+      sha256 "04c918e49784e12cc1dd8170052c4a63cce0a0e82799b2125f81bda856e14ce0"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v59.0.0/qlogtail_59.0.0_darwin_arm64.tar.gz"
-    sha256 "6ad32bc59ca97669d5fb459b2d70149fdb93036ff76a611cd134944a70abb507"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v59.0.0/qlogtail_59.0.0_linux_amd64.tar.gz"
-    sha256 "42b3a1f1f7877c72b96815b01b5d908cc830f00255ad2c48a4ce3e07a242a54f"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/quinyx/homebrew-tap/releases/download/v59.0.0/qlogtail_59.0.0_linux_arm64.tar.gz"
-    sha256 "e2aa90de25d45fcc801e989e73c92139832c0de7668b854784057a2c468e2add"
+
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v60.21.0/qlogtail_60.21.0_linux_arm64.tar.gz"
+      sha256 "4fa7197c5137c68ba6a150be24c512659d52ae9dcb43aec5b67886383ff5fabe"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v60.21.0/qlogtail_60.21.0_linux_amd64.tar.gz"
+      sha256 "5513b1bab4951317ac06da21c24e92a018d67905917f56bcf27fb536ceb939e3"
+    end
   end
 
   def install
