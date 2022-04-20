@@ -5,32 +5,43 @@
 class FrontendDevRelay < Formula
   desc "Powerup Frontend workflow, no more waiting for Backend to deliver"
   homepage "https://quinyx.com/"
-  version "2.60.14"
-  bottle :unneeded
+  version "2.60.23"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.60.14/frontend-dev-relay_2.60.14_darwin_amd64.tar.gz"
-      sha256 "f5cf6df8ee8fac237911800f8da3945a352b8da6b1656e6e96e6fa141d25c476"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.60.23/frontend-dev-relay_2.60.23_darwin_amd64.tar.gz"
+      sha256 "6943847172363fd945ac7796844b696abb065db59d993336b587283c7faed10d"
+
+      def install
+        bin.install "frontend-dev-relay"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.60.14/frontend-dev-relay_2.60.14_darwin_arm64.tar.gz"
-      sha256 "f50099f16870cd47b48c62d9dd81fd8c2d174b5506e7c88bc95a808880dfc3cf"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.60.23/frontend-dev-relay_2.60.23_darwin_arm64.tar.gz"
+      sha256 "654030547f02397bd572f5fbf97a2867fcd41116474982fd150c8ffafd80244b"
+
+      def install
+        bin.install "frontend-dev-relay"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.60.14/frontend-dev-relay_2.60.14_linux_amd64.tar.gz"
-      sha256 "6d7a82b159cd1eeee455cc2660a6e5d7faa0f7350d347f6003f1f88782c1d3f3"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.60.23/frontend-dev-relay_2.60.23_linux_amd64.tar.gz"
+      sha256 "d9f16ba0c47a6013461e99e93949b38436a138f52286b0377b52e10496010c13"
+
+      def install
+        bin.install "frontend-dev-relay"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.60.14/frontend-dev-relay_2.60.14_linux_arm64.tar.gz"
-      sha256 "73cc55bf765e48eac0a8cea4e66b940a98119a3f73c7d598eb65d1cad3a78a77"
-    end
-  end
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v2.60.23/frontend-dev-relay_2.60.23_linux_arm64.tar.gz"
+      sha256 "cb0dda8cf7d7e5fbda98ef8f14a14f4c20a59412dc26b87b024f1186df3ca4a2"
 
-  def install
-    bin.install "frontend-dev-relay"
+      def install
+        bin.install "frontend-dev-relay"
+      end
+    end
   end
 end
