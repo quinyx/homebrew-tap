@@ -5,20 +5,20 @@
 class Qlogtail < Formula
   desc "View Quinyx logs like a boss"
   homepage "https://quinyx.com/"
-  version "60.23.0"
+  version "61.0.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v60.23.0/qlogtail_60.23.0_darwin_arm64.tar.gz"
-      sha256 "cee2378140942fd76697480ffafaba707927c6ea96763881ffe3f4a23b85368c"
+    if Hardware::CPU.intel?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v61.0.0/qlogtail_61.0.0_darwin_amd64.tar.gz"
+      sha256 "2fa4205253eab45f1e821ae542f3fdf32b4ea30c2dc1633f4b344d5fb8812302"
 
       def install
         bin.install "qlogtail"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v60.23.0/qlogtail_60.23.0_darwin_amd64.tar.gz"
-      sha256 "c9292710a06fa4d558ed5589f69b8b896f7a3f39ef1af2d1401a240d0a00ebdc"
+    if Hardware::CPU.arm?
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v61.0.0/qlogtail_61.0.0_darwin_arm64.tar.gz"
+      sha256 "2bf3f63fa877972eef30cdfd0ebf6063b74d310bbe6c04fcbe05648c64571b86"
 
       def install
         bin.install "qlogtail"
@@ -28,16 +28,16 @@ class Qlogtail < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v60.23.0/qlogtail_60.23.0_linux_arm64.tar.gz"
-      sha256 "74d0b15eaabcb27354c9fceebcf51831b4cd5af642a422a3ec196cccdfa6a7aa"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v61.0.0/qlogtail_61.0.0_linux_arm64.tar.gz"
+      sha256 "f94808e5ae5c1c78f34b7b8d75b7c24fed220e03d716484089931ad2e46d7a28"
 
       def install
         bin.install "qlogtail"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/quinyx/homebrew-tap/releases/download/v60.23.0/qlogtail_60.23.0_linux_amd64.tar.gz"
-      sha256 "a55534886a7675acc2dc71e146c1b3936065d19ccb5e176f2216074967608b98"
+      url "https://github.com/quinyx/homebrew-tap/releases/download/v61.0.0/qlogtail_61.0.0_linux_amd64.tar.gz"
+      sha256 "8b837918d294243291e8af01f94a4a29897016ffe676cf59d37bd979f565721c"
 
       def install
         bin.install "qlogtail"
