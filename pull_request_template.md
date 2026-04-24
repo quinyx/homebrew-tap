@@ -1,4 +1,4 @@
-
+ 
 ## AI Usage (required — do not delete)
 Category — pick exactly one:
 - [ ] ai-none — no AI used
