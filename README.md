@@ -120,3 +120,7 @@ Or use the overlay to add packages to `pkgs`:
 |----------|--------------|
 | macOS    | Intel (x86_64), Apple Silicon (arm64) |
 | Linux    | x86_64, arm64 |
+
+## To Do
+
+- [ ] **Automate Flake Updates:** Add a script or GitHub Action to automatically fetch the latest release versions and sha256 hashes from the GitHub API and update the `flake.nix` file when new versions of the tools are released.
