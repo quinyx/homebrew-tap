@@ -1,15 +1,3 @@
-### What?
-
-- What was done to solve the problem
-
-### Why?
-
-- Why are these changes required
-
-### Notes
-
-- Are there any special considerations that are required to deploy this code such as db changes, 3rd party dependencies, is there any downtime required..
-
 ## AI Usage (required — do not delete)
 Category — pick exactly one:
 - [ ] ai-none — no AI used
@@ -33,4 +21,3 @@ Task type — pick any that apply (required unless ai-none):
 
 Comments (optional, free-form):
 <!-- how AI helped, what you had to correct, etc. -->
-
