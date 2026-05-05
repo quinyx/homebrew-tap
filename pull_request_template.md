@@ -7,6 +7,7 @@ Category — pick exactly one:
 
 Tool — pick any that apply (required unless ai-none):
 - [ ] tool:claude-code
+- [ ] tool:codex
 - [ ] tool:cursor
 - [ ] tool:copilot
 - [ ] tool:other
