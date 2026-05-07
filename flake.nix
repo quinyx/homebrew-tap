@@ -37,6 +37,21 @@
       # Supported systems
       supportedSystems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
 
+      mkToolModule = { name, enableDescription, packagesPath }:
+        { config, lib, pkgs, ... }:
+          let
+            cfg = config.programs.${name};
+          in {
+            options.programs.${name} = {
+              enable = lib.mkEnableOption enableDescription;
+            };
+
+            config = lib.mkIf cfg.enable (
+              lib.setAttrByPath packagesPath
+                [ self.packages.${pkgs.stdenv.hostPlatform.system}.${name} ]
+            );
+          };
+
     in
     flake-utils.lib.eachSystem supportedSystems (system:
       let
@@ -118,37 +133,23 @@
     ) // {
       # Overlay for use in NixOS/Home Manager configurations
       overlays.default = final: prev: {
-        qlogtail = self.packages.${prev.system}.qlogtail;
-        frontend-dev-relay = self.packages.${prev.system}.frontend-dev-relay;
+        qlogtail = self.packages.${prev.stdenv.hostPlatform.system}.qlogtail;
+        frontend-dev-relay = self.packages.${prev.stdenv.hostPlatform.system}.frontend-dev-relay;
       };
 
       # Home Manager modules
       homeManagerModules = {
-        qlogtail = { config, lib, pkgs, ... }:
-          let
-            cfg = config.programs.qlogtail;
-          in {
-            options.programs.qlogtail = {
-              enable = lib.mkEnableOption "qlogtail - View Quinyx logs like a boss";
-            };
+        qlogtail = mkToolModule {
+          name = "qlogtail";
+          enableDescription = "qlogtail - View Quinyx logs like a boss";
+          packagesPath = [ "home" "packages" ];
+        };
 
-            config = lib.mkIf cfg.enable {
-              home.packages = [ self.packages.${pkgs.system}.qlogtail ];
-            };
-          };
-
-        frontend-dev-relay = { config, lib, pkgs, ... }:
-          let
-            cfg = config.programs.frontend-dev-relay;
-          in {
-            options.programs.frontend-dev-relay = {
-              enable = lib.mkEnableOption "frontend-dev-relay - Powerup Frontend workflow";
-            };
-
-            config = lib.mkIf cfg.enable {
-              home.packages = [ self.packages.${pkgs.system}.frontend-dev-relay ];
-            };
-          };
+        frontend-dev-relay = mkToolModule {
+          name = "frontend-dev-relay";
+          enableDescription = "frontend-dev-relay - Powerup Frontend workflow";
+          packagesPath = [ "home" "packages" ];
+        };
 
         # Combined module for all Quinyx tools
         default = { config, lib, pkgs, ... }:
@@ -162,10 +163,10 @@
 
             config = lib.mkMerge [
               (lib.mkIf cfg.qlogtail.enable {
-                home.packages = [ self.packages.${pkgs.system}.qlogtail ];
+                home.packages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.qlogtail ];
               })
               (lib.mkIf cfg.frontend-dev-relay.enable {
-                home.packages = [ self.packages.${pkgs.system}.frontend-dev-relay ];
+                home.packages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.frontend-dev-relay ];
               })
             ];
           };
@@ -173,31 +174,17 @@
 
       # NixOS modules
       nixosModules = {
-        qlogtail = { config, lib, pkgs, ... }:
-          let
-            cfg = config.programs.qlogtail;
-          in {
-            options.programs.qlogtail = {
-              enable = lib.mkEnableOption "qlogtail - View Quinyx logs like a boss";
-            };
+        qlogtail = mkToolModule {
+          name = "qlogtail";
+          enableDescription = "qlogtail - View Quinyx logs like a boss";
+          packagesPath = [ "environment" "systemPackages" ];
+        };
 
-            config = lib.mkIf cfg.enable {
-              environment.systemPackages = [ self.packages.${pkgs.system}.qlogtail ];
-            };
-          };
-
-        frontend-dev-relay = { config, lib, pkgs, ... }:
-          let
-            cfg = config.programs.frontend-dev-relay;
-          in {
-            options.programs.frontend-dev-relay = {
-              enable = lib.mkEnableOption "frontend-dev-relay - Powerup Frontend workflow";
-            };
-
-            config = lib.mkIf cfg.enable {
-              environment.systemPackages = [ self.packages.${pkgs.system}.frontend-dev-relay ];
-            };
-          };
+        frontend-dev-relay = mkToolModule {
+          name = "frontend-dev-relay";
+          enableDescription = "frontend-dev-relay - Powerup Frontend workflow";
+          packagesPath = [ "environment" "systemPackages" ];
+        };
 
         # Combined module for all Quinyx tools
         default = { config, lib, pkgs, ... }:
@@ -211,10 +198,10 @@
 
             config = lib.mkMerge [
               (lib.mkIf cfg.qlogtail.enable {
-                environment.systemPackages = [ self.packages.${pkgs.system}.qlogtail ];
+                environment.systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.qlogtail ];
               })
               (lib.mkIf cfg.frontend-dev-relay.enable {
-                environment.systemPackages = [ self.packages.${pkgs.system}.frontend-dev-relay ];
+                environment.systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.frontend-dev-relay ];
               })
             ];
           };
